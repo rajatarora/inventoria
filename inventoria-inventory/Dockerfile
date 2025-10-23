@@ -4,6 +4,9 @@ COPY . .
 RUN mvn clean package
 
 FROM eclipse-temurin:25
+LABEL maintainer="rajat@rajatarora.info"
+LABEL version="0.0.1"
+LABEL description="Inventoria Inventory Microservice"
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8081
